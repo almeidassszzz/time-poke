@@ -7,7 +7,9 @@ urlpatterns = [
     path('time/lugia', views.lugia, name = 'lugia'),
     path('time/charizard', views.charizard, name = 'charizard'),
     path('time/rayquaza', views.rayquaza, name = 'rayquaza'),
-    path('time/torterra', views.charizard, name = 'torterra'),
-    path('time/suicune', views.rayquaza, name = 'suicune'),
+    path('time/torterra', views.torterra, name = 'torterra'),
+    path('time/suicune', views.suicune, name = 'suicune'),
     path('time/mimikyu', views.mimikyu, name = 'mimikyu'),
+    path('time/charizard/mega', views.mega_charizard, name = 'charizard-mega'),
+    path('time/rayquaza/mega', views.mega_rayquaza, name = 'rayquaza-mega')
 ]

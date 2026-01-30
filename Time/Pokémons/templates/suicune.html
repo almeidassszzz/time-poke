@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Suicune{% endblock %}
+
+{% block content %}
+<h2>{{ nome }}</h2>
+<hr>
+
+<img src="{{ imagem }}" alt="Sprite do {{ nome }}" width="180">
+
+<p><strong>Tipos: </strong> {{ tipos|join:", " }}</p>
+<p><strong>Altura: </strong> {{ altura }}</p>
+<p><strong>Peso: </strong> {{ peso }}</p>
+
+<h3>Status</h3>
+<ul>
+  <li><strong>HP: </strong> {{ status.hp }}</li>
+  <li><strong>ATK: </strong> {{ status.attack }}</li>
+  <li><strong>DEF: </strong> {{ status.defense }}</li>
+  <li><strong>SP. ATK: </strong> {{ status.special_attack }}</li>
+  <li><strong>SP. DEF: </strong> {{ status.special_defense }}</li>
+  <li><strong>SPEED: </strong> {{ status.speed }}</li>
+</ul>
+
+<hr>
+<a href="{% url 'time' %}">
+  <button>Voltar</button>
+</a>
+{% endblock %}
