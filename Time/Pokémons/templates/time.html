@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Minha Equipe{% endblock %}
+
+{% block content %}
+
+<h2>Meu Time</h2>
+<hr>
+
+{% for pokemon in equipe %}
+
+    <h3>{{ pokemon.nome }}</h3>
+
+    {% if pokemon.nome == "Lugia" %}
+        <a href="{% url 'lugia' %}">
+            <img src="{{ pokemon.imagem }}" width="120">
+        </a>
+
+    {% elif pokemon.nome == "Charizard" %}
+        <a href="{% url 'charizard' %}">
+            <img src="{{ pokemon.imagem }}" width="120">
+        </a>
+
+    {% elif pokemon.nome == "Rayquaza" %}
+        <a href="{% url 'rayquaza' %}">
+            <img src="{{ pokemon.imagem }}" width="120">
+        </a>
+
+    {% elif pokemon.nome == "Torterra" %}
+        <a href="{% url 'torterra' %}">
+            <img src="{{ pokemon.imagem }}" width="120">
+        </a>
+
+    {% elif pokemon.nome == "Suicune" %}
+        <a href="{% url 'suicune' %}">
+            <img src="{{ pokemon.imagem }}" width="120">
+        </a>
+
+    {% elif pokemon.nome == "Mimikyu" %}
+        <a href="{% url 'mimikyu' %}">
+            <img src="{{ pokemon.imagem }}" width="120">
+        </a>
+    {% endif %}
+
+    <hr>
+
+{% endfor %}
+
+{% endblock %}
