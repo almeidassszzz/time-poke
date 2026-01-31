@@ -10,6 +10,6 @@ urlpatterns = [
     path('time/torterra', views.torterra, name = 'torterra'),
     path('time/suicune', views.suicune, name = 'suicune'),
     path('time/mimikyu', views.mimikyu, name = 'mimikyu'),
-    path('time/charizard/mega', views.mega_charizard, name = 'charizard-mega'),
-    path('time/rayquaza/mega', views.mega_rayquaza, name = 'rayquaza-mega')
+    path('time/charizard/mega', views.mega_charizard, name = 'charizardmega'),
+    path('time/rayquaza/mega', views.mega_rayquaza, name = 'rayquazamega')
 ]
