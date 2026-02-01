@@ -1,49 +1,55 @@
 {% extends "base.html" %}
 
-{% block title %}Minha Equipe{% endblock %}
+{% block title %}Time Pokémon{% endblock %}
 
 {% block content %}
+<h2>Minha Equipe</h2>
 
-<h2>Meu Time</h2>
+<hr>
+<div class="time-container">
+  {% for pokemon in equipe %}
+    <div class="poke-card">
+      <h3>{{ pokemon.nome }}</h3>
+
+      {% if pokemon.nome == "Lugia" %}
+        <a href = "{% url 'lugia' %}">
+          <img src = "{{ pokemon.imagem }}" width="120">
+        </a>
+
+      {% elif pokemon.nome == "Charizard" %}
+        <a href = "{% url 'charizard' %}">
+          <img src = "{{ pokemon.imagem }}" width="120">
+        </a>
+
+      {% elif pokemon.nome == "Rayquaza" %}
+        <a href = "{% url 'rayquaza' %}">
+          <img src = "{{ pokemon.imagem }}" width="120">
+        </a>
+
+      {% elif pokemon.nome == "Torterra" %}
+        <a href = "{% url 'torterra' %}">
+          <img src = "{{ pokemon.imagem }}" width="120">
+        </a>
+
+      {% elif pokemon.nome == "Suicune" %}
+        <a href = "{% url 'suicune' %}">
+          <img src = "{{ pokemon.imagem }}" width="120">
+        </a>
+
+      {% elif pokemon.nome == "Mimikyu" %}
+        <a href = "{% url 'mimikyu' %}">
+          <img src = "{{ pokemon.imagem }}" width="120">
+        </a>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
 <hr>
 
-{% for pokemon in equipe %}
-
-    <h3>{{ pokemon.nome }}</h3>
-
-    {% if pokemon.nome == "Lugia" %}
-        <a href="{% url 'lugia' %}">
-            <img src="{{ pokemon.imagem }}" width="120">
-        </a>
-
-    {% elif pokemon.nome == "Charizard" %}
-        <a href="{% url 'charizard' %}">
-            <img src="{{ pokemon.imagem }}" width="120">
-        </a>
-
-    {% elif pokemon.nome == "Rayquaza" %}
-        <a href="{% url 'rayquaza' %}">
-            <img src="{{ pokemon.imagem }}" width="120">
-        </a>
-
-    {% elif pokemon.nome == "Torterra" %}
-        <a href="{% url 'torterra' %}">
-            <img src="{{ pokemon.imagem }}" width="120">
-        </a>
-
-    {% elif pokemon.nome == "Suicune" %}
-        <a href="{% url 'suicune' %}">
-            <img src="{{ pokemon.imagem }}" width="120">
-        </a>
-
-    {% elif pokemon.nome == "Mimikyu" %}
-        <a href="{% url 'mimikyu' %}">
-            <img src="{{ pokemon.imagem }}" width="120">
-        </a>
-    {% endif %}
-
-    <hr>
-
-{% endfor %}
+<div class="botao-voltar">
+  <a href = "{% url 'index' %}">
+    <button>Voltar</button>
+  </a>
+</div>
 
 {% endblock %}
